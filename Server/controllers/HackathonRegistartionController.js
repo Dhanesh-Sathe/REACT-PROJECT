@@ -135,4 +135,4 @@ const sendWhatsAppLink = async (email, leader, teamMembers, teamName, teamSize) 
 };
 
 
-module.exports = HackathonRegistration;
+module.exports =  HackathonRegistration ;
