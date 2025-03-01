@@ -1,219 +1,276 @@
-/* App.css */
-:root {
-  --primary-color: #3498db;
-  --secondary-color: #2c3e50;
-  --success-color: #2ecc71;
-  --error-color: #e74c3c;
-  --background-color: #f5f7fa;
-  --border-color: #dde1e7;
-  --text-color: #333;
-  --light-text: #666;
-  --border-radius: 6px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
+/* Registration Form Styling */
 .hackathon-registration-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 40px 20px;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .registration-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 20px;
 }
 
 .registration-header h1 {
-  color: var(--secondary-color);
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #00f5a0, #00d9f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
 }
 
 .registration-header p {
-  color: var(--light-text);
+  font-size: 1.1rem;
+  color: #94a3b8;
 }
 
 .registration-form {
-  background-color: #fff;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .form-section {
-  padding: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.form-section:last-child {
-  border-bottom: none;
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-section h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #00d9f5;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 10px;
 }
 
 .form-section h2::after {
   content: '';
   position: absolute;
-  bottom: 0;
   left: 0;
-  width: 50px;
+  bottom: 0;
+  width: 60px;
   height: 3px;
-  background-color: var(--primary-color);
-}
-
-.team-size-section {
-  background-color: rgba(52, 152, 219, 0.05);
-}
-
-.leader-section {
-  background-color: rgba(52, 152, 219, 0.1);
-}
-
-.member-section {
-  background-color: #fff;
+  background: linear-gradient(90deg, #00f5a0, #00d9f5);
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  width: 100%;
 }
 
 .form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
   font-weight: 500;
-  font-size: 0.9rem;
+  color: #cbd5e1;
 }
 
 .required {
-  color: var(--error-color);
-  margin-left: 3px;
+  color: #f43f5e;
+  margin-left: 4px;
 }
 
 .form-input,
 .form-select {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  font-size: 0.95rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  height: 48px;
+}
+
+/* Fix for form field sizing */
+.form-input,
+.form-select,
+.file-input {
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .form-input:focus,
 .form-select:focus {
+  border-color: #00d9f5;
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 217, 245, 0.2);
 }
 
-.form-checkbox {
-  margin-right: 0.5rem;
-  transform: scale(1.2);
+.form-input::placeholder {
+  color: #64748b;
 }
 
-.checkbox-group {
+/* Checkbox container styling */
+.checkbox-container {
   display: flex;
   align-items: center;
 }
 
-/* File Upload Styling */
+.form-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  accent-color: #00d9f5;
+}
+
 .file-upload-container {
+  position: relative;
   width: 100%;
 }
 
 .file-input {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px dashed #334155;
   width: 100%;
-  padding: 0.5rem 0;
-  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.file-input:hover {
+  border-color: #00d9f5;
 }
 
 .file-preview {
-  margin-top: 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 0.5rem;
-  background-color: #f8fafc;
+  margin-top: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .preview-image {
-  max-width: 100%;
-  max-height: 150px;
+  width: 100%;
+  height: auto;
   display: block;
+}
+
+.payment-section {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.payment-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.qr-code-container {
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
   margin: 0 auto;
 }
 
+.payment-qr-code {
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid #334155;
+}
+
+.payment-info {
+  margin-top: 15px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.payment-info:last-child {
+  font-weight: 700;
+  color: #00f5a0;
+}
+
+/* Payment upload section */
+.payment-upload {
+  flex: 2;
+  min-width: 300px;
+}
+
 .form-actions {
-  padding: 1.5rem;
-  background-color: #f8fafc;
   text-align: center;
+  margin-top: 40px;
 }
 
 .submit-btn {
-  background-color: var(--primary-color);
-  color: white;
+  background: linear-gradient(90deg, #00f5a0, #00d9f5);
+  color: #0f172a;
   border: none;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  padding: 14px 32px;
+  font-size: 1.1rem;
   font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 217, 245, 0.3);
 }
 
 .submit-btn:hover {
-  background-color: #2980b9;
-}
-
-.submit-btn:active {
-  transform: translateY(1px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 217, 245, 0.4);
 }
 
 .submit-btn:disabled {
-  background-color: #95a5a6;
+  background: #64748b;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
+/* Alert messages */
 .alert {
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  border-radius: var(--border-radius);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
   font-weight: 500;
+  text-align: center;
 }
 
 .alert-success {
-  background-color: rgba(46, 204, 113, 0.2);
-  color: #27ae60;
-  border-left: 4px solid var(--success-color);
+  background-color: rgba(0, 245, 160, 0.1);
+  border-left: 4px solid #00f5a0;
+  color: #00f5a0;
 }
 
 .alert-error {
-  background-color: rgba(231, 76, 60, 0.2);
-  color: #c0392b;
-  border-left: 4px solid var(--error-color);
+  background-color: rgba(244, 63, 94, 0.1);
+  border-left: 4px solid #f43f5e;
+  color: #f43f5e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -221,19 +278,62 @@ body {
     grid-template-columns: 1fr;
   }
   
+  .payment-details {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .registration-header h1 {
+    font-size: 2rem;
+  }
+  
+  .hackathon-registration-container {
+    padding: 20px 15px;
+  }
+  
   .form-section {
-    padding: 1.25rem;
+    padding: 20px;
   }
 }
 
-.payment-qr-code {
-  width: 350px;
-  height: 400px;
-  margin: 0 31%;
+/* Fix for checkboxes alignment */
+input[type="checkbox"] {
+  vertical-align: middle;
 }
 
-.payment-info {
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
+/* Transition effects */
+.form-section, .submit-btn, .form-input, .form-select {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Team member sections */
+.member-section {
+  border-left: 3px solid #00d9f5;
+}
+
+.leader-section {
+  border-left: 3px solid #00f5a0;
+}
+
+/* Team size section styling */
+.team-size-section {
+  border-left: 3px solid #f59e0b;
+}
+
+/* Registration button styling */
+.registration-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #00f5a0, #00d9f5);
+  color: #0f172a;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.registration-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 217, 245, 0.3);
 }
